@@ -1,0 +1,100 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::before {
+    box-sizing: border-box;
+}
+
+*::after {
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.code-wrapper {
+    height: 50%;
+    flex: 1;
+    overflow: auto;
+}
+
+.wrapper {
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    background-color: #F7F7F7;
+    z-index: -999;
+}
+
+.chopper {
+    width: 375px;
+    height: 270px;
+    position: relative;
+}
+
+.mouse-wrapper {
+    width: 38px;
+    height: 89px;
+    position: absolute;
+    left: 50%;
+    margin-left: -13px;
+    bottom: -12px;
+}
+
+.deerHorn.left > li {
+    border-radius: 50% / 40% 5% 5% 40%;
+}
+
+.deerHorn.right > li {
+    border-radius: 50% / 5% 40% 40% 5%;
+}
+
+.deerHorn.left::before {
+    left: 95px;
+    transform: rotate(-40deg);
+}
+
+.deerHorn.right::before {
+    right: 95px;
+    transform: rotate(40deg);
+}
+
+.deerHorn.left > .circle {
+    left: 32px;
+}
+
+.deerHorn.right > .circle {
+    right: 32px;
+}
+
+.speed {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.speed > button {
+    margin: 10px;
+    background: #ddd;
+    padding: 8px 10px;
+    border: none;
+}
+
+.speed > button.active {
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
