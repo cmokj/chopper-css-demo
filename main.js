@@ -1,6 +1,6 @@
-!function(){
+!function () {
     var duration = 50;
-    $('.speed').on('click','button',function(e) {
+    $('.speed').on('click', 'button', function (e) {
         let $button = $(e.currentTarget);
         $button.addClass('active')
             .siblings('.active').removeClass('avcive');
@@ -16,23 +16,25 @@
                 duration = 10
         }
     })
-    function writeCode(code,fn) {
+
+    function writeCode(code, fn) {
         var domCode = document.querySelector('#code');
         var domStyle = document.querySelector('#styleTag');
         var domWrapper = document.querySelector('.code-wrapper')
         var n = 0;
         var id = setTimeout(function xxx() {
             n += 1;
-            domCode.innerHTML = code.substring(0,n);
-            domStyle.innerHTML = code.substring(0,n);
+            domCode.innerHTML = code.substring(0, n);
+            domStyle.innerHTML = code.substring(0, n);
             domWrapper.scrollTop = domCode.scrollHeight
-            if(n < code.length) {
-                id = setTimeout(xxx,duration);
-            }else {
+            if (n < code.length) {
+                id = setTimeout(xxx, duration);
+            } else {
                 fn && fn.call();
             }
-    },duration)
+        }, duration)
     }
+
     var text = `
     /*我们来画一只可（盗）爱（版）的 Tony Tony Chopper 吧！*/
     
@@ -80,18 +82,20 @@
     
     /*
      * 接下来就要画嘴巴啦   
-     */
+     */  
     
     .upperLip {
         position: absolute;
-        height: 29px;
-        width: 29px;
-        border-bottom: 3px solid black;
+        width: 40px;
+        height: 40px;
+        border: solid 3px #000;
+        border-color: transparent transparent #000 transparent;
         border-radius: 50%;
-        top: 190px;
+        top: 180px;
         overflow: hidden;
         background-color: #DFB47D;
     }
+
     
     /*
      * 左边的上嘴唇（？）    
@@ -99,8 +103,8 @@
      
     .upperLip.left {
         left: 50%;
-        margin-left: -28px;
-        transform: rotate(-15deg);
+        margin-left: -36px;
+        transform: rotate(-25deg);
     }
     
     /*
@@ -109,8 +113,8 @@
      
     .upperLip.right {
         right: 50%;
-        margin-right: -28px;
-        transform: rotate(15deg);
+        margin-right: -36px;
+        transform: rotate(25deg);
     }
     
     
